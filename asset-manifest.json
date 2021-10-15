@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/test-yasp-task/static/css/main.9eed1f88.chunk.css",
-    "main.js": "/test-yasp-task/static/js/main.b93ea1d9.chunk.js",
-    "main.js.map": "/test-yasp-task/static/js/main.b93ea1d9.chunk.js.map",
+    "main.css": "/test-yasp-task/static/css/main.3fbc5dee.chunk.css",
+    "main.js": "/test-yasp-task/static/js/main.6acab505.chunk.js",
+    "main.js.map": "/test-yasp-task/static/js/main.6acab505.chunk.js.map",
     "runtime-main.js": "/test-yasp-task/static/js/runtime-main.a5fc8793.js",
     "runtime-main.js.map": "/test-yasp-task/static/js/runtime-main.a5fc8793.js.map",
     "static/js/2.487ca5a2.chunk.js": "/test-yasp-task/static/js/2.487ca5a2.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.ec238722.chunk.js": "/test-yasp-task/static/js/3.ec238722.chunk.js",
     "static/js/3.ec238722.chunk.js.map": "/test-yasp-task/static/js/3.ec238722.chunk.js.map",
     "index.html": "/test-yasp-task/index.html",
-    "static/css/main.9eed1f88.chunk.css.map": "/test-yasp-task/static/css/main.9eed1f88.chunk.css.map",
+    "static/css/main.3fbc5dee.chunk.css.map": "/test-yasp-task/static/css/main.3fbc5dee.chunk.css.map",
     "static/js/2.487ca5a2.chunk.js.LICENSE.txt": "/test-yasp-task/static/js/2.487ca5a2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a5fc8793.js",
     "static/js/2.487ca5a2.chunk.js",
-    "static/css/main.9eed1f88.chunk.css",
-    "static/js/main.b93ea1d9.chunk.js"
+    "static/css/main.3fbc5dee.chunk.css",
+    "static/js/main.6acab505.chunk.js"
   ]
 }
