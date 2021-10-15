@@ -12,8 +12,7 @@ export type ResponseType = {
     prod: InstanceDataType
     norm: number
 }
-const instance = axios.create({
-    baseURL:'https://rcslabs.ru/ttrp1.json',
-    withCredentials:true
-})
-export const testData = instance.get<ResponseType>('')
+
+export const testData = axios.get<ResponseType>('https://rcslabs.ru/ttrp1.json')
+
+

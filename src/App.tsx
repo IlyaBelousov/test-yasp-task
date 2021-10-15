@@ -5,7 +5,6 @@ import {Diagram} from "./components/Diagram";
 import {AxiosError} from "axios";
 
 
-
 export type DiagramDataType = {
     title: string
     dev: InstanceDataType
@@ -20,15 +19,13 @@ function App() {
         testData.then(response => {
             setDiagramData({...response.data})
         })
-            .catch((error:AxiosError)=>{
+            .catch((error: AxiosError) => {
                 console.log(error.message)
             })
     }, [])
-
     return (
         <div className="App">
             <Diagram diagramData={diagramData}/>
-
         </div>
     );
 }

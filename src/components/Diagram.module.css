@@ -9,6 +9,7 @@
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+    box-sizing: border-box;
 }
 
 .title {
@@ -33,7 +34,7 @@
 .dataContainer {
     position: relative;
     box-sizing: border-box;
-    height: 458px;
+    max-height: max-content;
     width: 100%;
     margin: 0;
     display: flex;
@@ -113,6 +114,7 @@
 }
 
 .footer {
+    margin-top: 15px;
     display: flex;
     font-family: Roboto;
     font-style: normal;

@@ -2,12 +2,18 @@ import React from 'react';
 import s from './Diagram.module.css'
 
 import {DiagramDataType} from "../App";
+import {InstanceDataType} from "../api/data-api";
+import {DiffComponent} from "./DiffComponent";
 
-type DiagramPropsType = {
-    diagramData?: DiagramDataType
-}
 
-export const Diagram = (props: DiagramPropsType) => {
+export const Diagram = (props: { diagramData?: DiagramDataType }) => {
+    const getSum = (column: InstanceDataType) => {
+        return Object.values(column).reduce((acc, el) => acc + el, 0)
+    }
+    let normColumnHeight = props.diagramData?.norm && props.diagramData?.norm + 50;
+    const getColumnCoeff = (testResults: number) => {
+        return testResults + 20
+    }
     return <div className={s.container}>
         <div className={s.title}>
             <span>Количество пройденных тестов “{props.diagramData?.title}”</span>
@@ -18,31 +24,105 @@ export const Diagram = (props: DiagramPropsType) => {
 </svg></span>
 
         </div>
+        <svg>
+            <g>
+                <svg x={'11.95%'} y={'50%'} width="1" height="62" viewBox="0 0 1 62" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0.5" y1="61.5" x2="0.500003" y2="0.5" stroke="#898290" strokeLinecap="round"/>
+                </svg>
+                <svg x={'12%'} y={'50%'} width="46" height="1" viewBox="0 0 46 1" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0.5" y1="0.5" x2="45.5" y2="0.5" stroke="#898290" strokeLinecap="round"/>
+                </svg>
+                <DiffComponent x={20} y={64}
+                               testColumnSum={props.diagramData?.test && getSum(props.diagramData?.test)}
+                               devColumnSum={props.diagramData?.dev && getSum(props.diagramData?.dev)}/>
+                <svg x={'28.7%'} y={'50%'} width="46" height="1" viewBox="0 0 46 1" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0.5" y1="0.5" x2="45.5" y2="0.5" stroke="#898290" strokeLinecap="round"/>
+                </svg>
+                <svg x={'36.8%'} y={'50%'} width="1" height="62" viewBox="0 0 1 62" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0.5" y1="61.5" x2="0.500003" y2="0.5" stroke="#898290" strokeLinecap="round"/>
+                </svg>
+                <svg x={'36.3%'} y={'90%'} width="7" height="4" viewBox="0 0 7 4" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path fillRule="evenodd" clipRule="evenodd"
+                          d="M3.02471 2.3672H3.97529L6.18863 0.140074C6.37424 -0.0466915 6.67518 -0.0466915 6.86079 0.140074C7.0464 0.32684 7.0464 0.629646 6.86079 0.816412L3.83608 3.85993C3.65047 4.04669 3.34953 4.04669 3.16392 3.85993L0.139209 0.816412C-0.0464029 0.629646 -0.0464029 0.32684 0.139209 0.140074C0.32482 -0.0466915 0.625755 -0.0466915 0.811367 0.140074L3.02471 2.3672Z"
+                          fill="#898290"/>
+                </svg>
+                <svg x={'39.9%'} y={'50%'} width="1" height="62" viewBox="0 0 1 62" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0.5" y1="61.5" x2="0.500003" y2="0.5" stroke="#898290" strokeLinecap="round"/>
+                </svg>
+                <svg x={'40%'} y={'50%'} width="46" height="1" viewBox="0 0 46 1" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0.5" y1="0.5" x2="45.5" y2="0.5" stroke="#898290" strokeLinecap="round"/>
+                </svg>
+                <DiffComponent x={47} y={65}
+                               testColumnSum={props.diagramData?.test && getSum(props.diagramData?.test)}
+                               prodColumnSum={props.diagramData?.prod && getSum(props.diagramData?.prod)}
+
+                />
+                <svg x={'55.6%'} y={'50%'} width="46" height="1" viewBox="0 0 46 1" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0.5" y1="0.5" x2="45.5" y2="0.5" stroke="#898290" strokeLinecap="round"/>
+                </svg>
+                <svg x={'64%'} y={'50%'} width="1" height="62" viewBox="0 0 1 62" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0.5" y1="61.5" x2="0.500003" y2="0.5" stroke="#898290" strokeLinecap="round"/>
+                </svg>
+                <svg x={'63.4%'} y={'90%'} width="7" height="4" viewBox="0 0 7 4" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path fillRule="evenodd" clipRule="evenodd"
+                          d="M3.02471 2.3672H3.97529L6.18863 0.140074C6.37424 -0.0466915 6.67518 -0.0466915 6.86079 0.140074C7.0464 0.32684 7.0464 0.629646 6.86079 0.816412L3.83608 3.85993C3.65047 4.04669 3.34953 4.04669 3.16392 3.85993L0.139209 0.816412C-0.0464029 0.629646 -0.0464029 0.32684 0.139209 0.140074C0.32482 -0.0466915 0.625755 -0.0466915 0.811367 0.140074L3.02471 2.3672Z"
+                          fill="#898290"/>
+                </svg>
+            </g>
+        </svg>
         <div className={s.dataContainer}>
             <div className={s.columnContainer}>
                 <div className={s.column}>
                     <div
-                        style={{backgroundColor: ' #4AB6E8',height:`${props.diagramData?.dev.front&&props.diagramData?.dev.front*1.5}px`}} className={s.testsResultsClient}><span>{props.diagramData?.dev.front}</span></div>
+                        style={{
+                            backgroundColor: ' #4AB6E8',
+                            height: `${props.diagramData?.dev.front && getColumnCoeff(props.diagramData?.dev.front)}px`
+                        }} className={s.testsResultsClient}><span>{props.diagramData?.dev.front}</span></div>
                     <div
-                        style={{backgroundColor: ' #AA6FAC',height:`${props.diagramData?.dev.back&&props.diagramData?.dev.back*1.5}px`}}
+                        style={{
+                            backgroundColor: ' #AA6FAC',
+                            height: `${props.diagramData?.dev.back && getColumnCoeff(props.diagramData?.dev.back)}px`
+                        }}
                         className={s.testsResults}>
                         <span>{props.diagramData?.dev.back}</span>
                     </div>
                     <div
-                        style={{backgroundColor: ' #E85498',height:`${props.diagramData?.dev.db&&props.diagramData?.dev.db*1.5}px`}} className={s.testsResultsDb}><span>{props.diagramData?.dev.db}</span></div>
+                        style={{
+                            backgroundColor: ' #E85498',
+                            height: `${props.diagramData?.dev.db && getColumnCoeff(props.diagramData?.dev.db)}px`
+                        }} className={s.testsResultsDb}><span>{props.diagramData?.dev.db}</span></div>
                 </div>
                 <span>dev</span>
             </div>
             <div className={s.columnContainer}>
                 <div className={s.column}>
                     <div
-                        style={{backgroundColor: ' #4AB6E8',height:`${props.diagramData?.dev.back&&props.diagramData?.test.front*1.5}px`}}
+                        style={{
+                            backgroundColor: ' #4AB6E8',
+                            height: `${props.diagramData?.test.front && getColumnCoeff(props.diagramData?.test.front)}px`
+                        }}
                         className={s.testsResultsClient}><span>{props.diagramData?.test.front}</span></div>
                     <div
-                        style={{backgroundColor: ' #AA6FAC',height:`${props.diagramData?.test.back&&props.diagramData?.test.back*1.5}px`}}
+                        style={{
+                            backgroundColor: ' #AA6FAC',
+                            height: `${props.diagramData?.test.back && getColumnCoeff(props.diagramData?.test.back)}px`
+                        }}
                         className={s.testsResults}><span>{props.diagramData?.test.back}</span></div>
                     <div
-                        style={{backgroundColor: ' #E85498',height:`${props.diagramData?.test.db&&props.diagramData?.test.db*1.5}px`}}
+                        style={{
+                            backgroundColor: ' #E85498',
+                            height: `${props.diagramData?.test.db && getColumnCoeff(props.diagramData?.test.db)}px`
+                        }}
                         className={s.testsResultsDb}><span>{props.diagramData?.test.db}</span></div>
                 </div>
                 <span>test</span>
@@ -50,20 +130,30 @@ export const Diagram = (props: DiagramPropsType) => {
             <div className={s.columnContainer}>
                 <div className={s.column}>
                     <div
-                        style={{backgroundColor: ' #4AB6E8',height:`${props.diagramData?.prod.front&&props.diagramData?.prod.front*1.5}px`}}
+                        style={{
+                            backgroundColor: ' #4AB6E8',
+                            height: `${props.diagramData?.prod.front && getColumnCoeff(props.diagramData?.prod.front)}px`
+                        }}
                         className={s.testsResultsClient}><span>{props.diagramData?.prod.front}</span></div>
                     <div
-                        style={{backgroundColor: ' #AA6FAC',height:`${props.diagramData?.prod.back&&props.diagramData?.prod.back*1.5}px`}}
+                        style={{
+                            backgroundColor: ' #AA6FAC',
+                            height: `${props.diagramData?.prod.back && getColumnCoeff(props.diagramData?.prod.back)}px`
+                        }}
                         className={s.testsResults}><span>{props.diagramData?.prod.back}</span></div>
                     <div
-                        style={{backgroundColor: ' #E85498',height:`${props.diagramData?.prod.db&&props.diagramData?.prod.db*1.5}px`}}
+                        style={{
+                            backgroundColor: ' #E85498',
+                            height: `${props.diagramData?.prod.db && getColumnCoeff(props.diagramData?.prod.db)}px`
+                        }}
                         className={s.testsResultsDb}><span>{props.diagramData?.prod.db}</span></div>
 
                 </div>
                 <span>prod</span>
             </div>
             <div className={s.columnContainer}>
-                <div style={{height: '195px'}} className={s.normColumn}>
+                <div style={{height: `${normColumnHeight}px`}}
+                     className={s.normColumn}>
 
                     <svg
                         x="0"
@@ -101,7 +191,8 @@ export const Diagram = (props: DiagramPropsType) => {
 
                             <g>
                                 <rect width="48" height="24" rx="5" fill="white"/>
-                                <text x="11" y="16" fontWeight={'bold'} fontSize="14" fill="#898290">150</text>
+                                <text x="11" y="16" fontWeight={'bold'} fontSize="14"
+                                      fill="#898290">{props.diagramData?.norm}</text>
                             </g>
                         </svg>
 
