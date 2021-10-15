@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
 import './App.css';
+import {InstanceDataType, testData} from "./api/data-api";
+import {Diagram} from "./components/Diagram";
+import {AxiosError} from "axios";
+
+
+
+export type DiagramDataType = {
+    title: string
+    dev: InstanceDataType
+    test: InstanceDataType
+    prod: InstanceDataType
+    norm: number
+}
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    let [diagramData, setDiagramData] = useState<DiagramDataType>()
+    useEffect(() => {
+        testData.then(response => {
+            setDiagramData({...response.data})
+        })
+            .catch((error:AxiosError)=>{
+                console.log(error.message)
+            })
+    }, [])
+
+    return (
+        <div className="App">
+            <Diagram diagramData={diagramData}/>
+
+        </div>
+    );
 }
 
 export default App;

@@ -1,0 +1,131 @@
+.container {
+    padding: 13px 22px 20px 19px;
+    width: 591px;
+    height: 534px;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 20px rgba(61, 57, 54, 0.04), 0px 2px 6px rgba(61, 57, 54, 0.04), 0px 0px 1px rgba(61, 57, 54, 0.04);
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    /* identical to box height, or 131% */
+
+    letter-spacing: 0.1px;
+
+    /* описание / данные */
+
+    color: #898290;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.dataContainer {
+    position: relative;
+    box-sizing: border-box;
+    height: 458px;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    color: #898290;
+}
+
+.columnContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.normColumn {
+    background: #4AB6E8;
+    width: 80px;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    z-index: 1;
+}
+.normNum{
+    width: 48px;
+    height: 24px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    z-index: 6;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+}
+.norm{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.column {
+    bottom: 0;
+    width: 80px;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 15px;
+
+}
+.column span {
+    margin: 0 auto;
+}
+.testsResults,.testsResultsClient,.testsResultsDb{
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.testsResultsClient{
+    border-radius: 10px 10px 0 0;
+}
+.testsResultsDb{
+    border-radius: 0 0 10px 10px;
+}
+
+.footer {
+    display: flex;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    justify-content: space-evenly;
+    color: #898290;
+}
+.footerValue{
+    display: flex;
+    align-items: center;
+}
+.footerValue span{
+    margin-left: 9px;
+}
